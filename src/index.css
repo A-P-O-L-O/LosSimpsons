@@ -1,0 +1,163 @@
+/* Estilos generales */
+body {
+  font-family: cursive;
+  font-weight: 700;
+  background-image: linear-gradient(219deg, #fefefe 0%, #18f967 90%);
+}
+
+span {
+  color: red;
+}
+
+/* Contenedor principal */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  /* Añadido espacio alrededor del contenedor principal */
+}
+
+/* Componentes individuales */
+.componente {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  transition: transform 0.3s ease-in-out;
+  background-color: yellowgreen;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
+  }
+}
+
+/* Separación entre componentes */
+.separacion {
+  margin-top: 30px;
+}
+
+/* Simp */
+.mostrar {
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 22px;
+  width: 90%;
+  /* Cambiado a un porcentaje para mayor flexibilidad */
+  max-width: 600px;
+  /* Establecido un ancho máximo */
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(14.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.informacion {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.8);
+  /* Mayor opacidad en fondos */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  /* Color blanco para enlaces */
+  font-size: 16px;
+  /* Reducido el tamaño de fuente para enlaces */
+}
+
+/* Media queries para hacerlo responsive */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
+
+  .mostrar {
+    width: 90%;
+    max-width: none;
+  }
+}
+
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: 0.125em solid #1A1A1A;
+  border-radius: 0.9375em;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: cursive;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  min-height: 3.75em;
+  min-width: 0;
+  outline: none;
+  padding: 1em 1.3em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
